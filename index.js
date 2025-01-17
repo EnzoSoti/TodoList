@@ -4,7 +4,6 @@ const taskList = document.querySelector('.task-list');
 
 // function to add task to the list and create delete button
 function addTask() {
-
     // check if task input is empty
     if(taskInput.value === '') {
         Swal.fire({
