@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO list</title>
-    <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="/responsive.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body>
+<body class="bg-light pt-5">
     <div class="container">
-        <h1 class="title">TODO List</h1>
-        <div class="input-group">
-            <input class="input-task" type="text" id="input" placeholder="Add a new task...">
-            <button onclick="addTask()" class="add-task-btn">Add task</button>
-            
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <h1 class="text-center text-primary mb-4">TODO List</h1>
+                <div class="input-group mb-4">
+                    <input class="form-control input-task" type="text" id="input" placeholder="Add a new task...">
+                    <button onclick="addTask()" class="btn btn-primary add-task-btn">Add task</button>
+                </div>
+                <ul class="list-unstyled task-list">
+                    <li>
+                        <!-- Tasks will go here -->
+                    </li>
+                </ul>
+                <div class="text-center mt-4">
+                    <a class="btn btn-link report-btn text-muted" href="./404.html">Report an error to Enzo Daniela</a>
+                </div>
+            </div>
         </div>
-        <ul class="task-list">
-            <li>
-                <!-- Tasks will go here -->
-            </li>
-        </ul>
-        <a class="report-btn" href="./404.html">Report an error to Enzo Daniela</a>
-
     </div>
 
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
