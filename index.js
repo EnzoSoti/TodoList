@@ -24,7 +24,7 @@ function addTask() {
     // Create delete button with styling
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
-    deleteBtn.className = 'btn btn-primary btn-sm '; // daisyUI button classes
+    deleteBtn.className = 'btn btn-danger btn-sm btn-'; // daisyUI button classes
     deleteBtn.addEventListener('click', () => {
         taskList.removeChild(taskItem);
         Swal.fire({

@@ -4,17 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO list</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    
+    <!-- sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body class="bg-gray-100 pt-5">
+<body class="bg-gray-100 font-poppins">
+
+    <!-- navigation bar -->
+    <nav class="bg-blue-600 py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-white text-xl font-bold">TODO App</a>
+            <ul class="flex gap-6">
+                <li><a href="#" class="text-white hover:underline">Home</a></li>
+                <li><a href="#" class="text-white hover:underline">About</a></li>
+                <li><a href="#" class="text-white hover:underline">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container mx-auto px-4">
         <div class="flex justify-center">
             <div class="w-full md:w-2/3 lg:w-1/2">
-                <h1 class="text-center text-blue-600 text-2xl italic mb-4">TODO List</h1>
+                <h1 class="text-center text-2xl mb-4 mt-4 text-black">Welcome to simple TODO app</h1>
                 <div class="input-group flex gap-2 mb-4">
                     <input class="form-control input-task flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
                            type="text" 
@@ -33,7 +47,7 @@
                 <div class="text-center mt-4">
                     <a class="btn btn-link report-btn text-gray-500 hover:text-gray-700 transition-colors" 
                        href="./404.html">
-                        Report an error to Enzo Daniela
+                        Report an error to <span class="font-extrabold text-red-600">Enzo Daniela</span> 
                     </a>
                 </div>
             </div>
@@ -41,5 +55,6 @@
     </div>
 
     <script src="index.js"></script>
+    <script src="poppinsFont.js"></script>
 </body>
 </html>
