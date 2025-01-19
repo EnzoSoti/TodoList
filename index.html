@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO list</title>
+    <title>TODO APP</title>
     <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/003/529/153/non_2x/business-to-do-list-flat-icon-modern-style-vector.jpg">
     <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -11,58 +11,93 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/index.css">
+    
 </head>
 <body class="bg-light">
-    <!-- navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">TODO App</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
+    <div class="wrapper">
+        <!-- navigation bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">TODO App</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <div class="container py-4">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <h1 class="text-center mb-4">Welcome to simple TODO app</h1>
-                <div class="input-group mb-4">
-                    <input type="text" 
-                           class="form-control input-task" 
-                           id="input" 
-                           placeholder="Add a new task...">
-                    <button onclick="addTask()" 
-                            class="btn btn-primary add-task-btn">
-                            Add task
-                    </button>
-                </div>
-                <ul class="list-unstyled task-list">
-                    <li>
-                        <!-- Tasks will go here -->
-                    </li>
-                </ul>
-                <div class="text-center mt-4">
-                    <a class="btn btn-link report-btn text-muted" 
-                       href="./page/404.html">
-                        Report an error to <span class="fw-bolder text-danger">Enzo Daniela</span>
-                    </a>
+        <div class="content container py-4">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <h1 class="text-center mb-4">Welcome to simple TODO app</h1>
+                    <div class="input-group mb-4">
+                        <input type="text" 
+                               class="form-control input-task" 
+                               id="input" 
+                               placeholder="Add a new task...">
+                    </div>
+                    <div class="d-grid gap-2 mb-4">
+                        <button onclick="addTask()" 
+                                class="btn btn-primary add-task-btn">
+                                Add task
+                        </button>
+                        <button onclick="openEditModal()" 
+                                class="btn btn-success edit-task-btn">
+                                Edit
+                        </button>
+                    </div>
+                    
+                    <ul class="list-unstyled task-list">
+                        <li id="noTaskMessage" class="text-muted">No todo is putted</li>
+                    </ul>
                 </div>
             </div>
         </div>
+
+        <!-- edit task modal -->
+        <div class="modal fade" id="editTaskModal" tabindex="-1" aria-labelledby="editTaskModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editTaskModalLabel">Edit Task</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul id="modalTaskList" class="list-unstyled">
+                            <!-- Tasks will be dynamically inserted here -->
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="saveEditedTasks()">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer bg-light text-center py-3">
+            <div class="container">
+                <a class="btn btn-link report-btn text-muted text-decoration-none" 
+                   href="./page/404.html">
+                    Report an error to <span class="fw-bolder text-danger">Enzo Daniela</span>
+                </a>
+            </div>
+        </footer>
     </div>
 
     <!-- Bootstrap Bundle with Popper -->
